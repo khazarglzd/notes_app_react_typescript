@@ -4,19 +4,29 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { NewNote } from "./NewNote";
 import "./style.css";
 
+export type Note = {
+  id: string;
+} & NoteData;
+
+export type NoteData = {
+  title: string;
+  markdown: string;
+  tags: Tag[];
+};
+
+export type Tag = {
+  id: string;
+  label: string;
+};
+
 const App = () => {
+  const onSubmit = App;
+
   return (
     <Container className="my-4">
       <Routes>
         <Route path="/" element={<h1>Home</h1>} />
-        <Route
-          path="/new"
-          element={
-            <h1>
-              <NewNote />
-            </h1>
-          }
-        />
+        <Route path="/new" element={<NewNote onSubmit={onSubmit} />} />
         <Route path="/:id">
           <Route index element={<h1>Show</h1>} />
           <Route path="edit" element={<h1>Edit</h1>} />
