@@ -6,6 +6,7 @@ import { useLocalStorage } from "./useLocalStorage";
 import { useMemo } from "react";
 import { v4 as uuidV4 } from "uuid";
 import "./style.css";
+import { NoteList } from "./NoteList";
 
 export type Note = {
   id: string;
@@ -60,7 +61,7 @@ const App = () => {
   return (
     <Container className="my-4">
       <Routes>
-        <Route path="/" element={<h1>Home</h1>} />
+        <Route path="/" element={<NoteList availableTags={tags} />} />
         <Route
           path="/new"
           element={

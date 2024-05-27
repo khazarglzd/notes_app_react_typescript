@@ -77,12 +77,12 @@ export function NoteForm({
           <Form.Control required as="textarea" ref={markdownRef} rows={15} />
         </Form.Group>
         <Stack direction="horizontal" gap={2} className="justify-content-end">
-          <Link to="">
+          <Link to="..">
             <Button type="submit" variant="primary">
               Save
             </Button>
           </Link>
-          <Link to="..">
+          <Link to="">
             <Button type="button" variant="outline-secondary">
               Cancel
             </Button>
